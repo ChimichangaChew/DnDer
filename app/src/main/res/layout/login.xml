@@ -10,13 +10,15 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.072"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.025"
-        tools:srcCompat="@tools:sample/avatars[0]" />
+        tools:srcCompat="@tools:sample/avatars[0]"
+        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/textViewUser"
@@ -24,10 +26,10 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextUser"
+        app:layout_constraintEnd_toStartOf="@+id/editTextUser"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.279" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424" />
 
     <TextView
         android:id="@+id/textviewPassword"
@@ -49,10 +51,10 @@
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextUser" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextUser" />
 
     <EditText
-        android:id="@+id/editTextTextUser"
+        android:id="@+id/editTextUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="276dp"
@@ -70,6 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:text="Login"
+        android:onClick="onLoginClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />

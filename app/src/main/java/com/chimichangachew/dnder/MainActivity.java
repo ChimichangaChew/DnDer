@@ -2,17 +2,19 @@ package com.chimichangachew.dnder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
-    EditText meditTextPassword = findViewById(R.id.editTextTextPassword);
-    EditText meditTextUser = findViewById(R.id.editTextTextUser);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        Intent intent = new Intent(this,Login.class);
+        startActivity(intent);
     }
+
 }
