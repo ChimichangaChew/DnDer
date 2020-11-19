@@ -13,10 +13,10 @@ public class MatchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.match);
 
-       /* Intent intent = getIntent();
-        String user = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        Intent intent = getIntent();
+        String user = intent.getStringExtra(Login.EXTRA_MESSAGE);
 
         TextView mProfile = findViewById(R.id.matchProfileName);
-        mProfile.setText(user);*/
+        mProfile.setText(user);
     }
 }
