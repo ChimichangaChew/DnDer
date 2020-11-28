@@ -11,10 +11,10 @@ public class MatchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.match);
+        setContentView(R.layout.activity_match);
 
         Intent intent = getIntent();
-        String user = intent.getStringExtra(Login.EXTRA_MESSAGE);
+        String user = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
 
         TextView mProfile = findViewById(R.id.matchProfileName);
         mProfile.setText(user);

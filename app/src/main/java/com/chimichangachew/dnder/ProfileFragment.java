@@ -1,13 +1,10 @@
 package com.chimichangachew.dnder;
 
-import android.os.Bundle;
+import androidx.fragment.app.Fragment;
 
-import androidx.preference.PreferenceFragmentCompat;
-
-public class ProfileFragment extends PreferenceFragmentCompat {
-
-    @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        setPreferencesFromResource(R.xml.root_preferences, rootKey);
+public class ProfileFragment extends Fragment {
+    public ProfileFragment(){
+        super(R.layout.activity_profile);
     }
+
 }
