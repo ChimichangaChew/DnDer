@@ -23,13 +23,102 @@
         android:layout_width="196dp"
         android:layout_height="46dp"
         android:text="Profile"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087" />
-    <!-- TODO: edit Username, current username, new username -->
-    <!-- TODO: age and text view -->
-    <!-- TODO: bio edit bio -->
+        app:layout_constraintVertical_bias="0.071" />
+
+    <TextView
+        android:id="@+id/currentUsernameTextView"
+        android:layout_width="121dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:text="Current Username"
+        app:layout_constraintBottom_toTopOf="@+id/newUsernameTextView"
+        app:layout_constraintStart_toEndOf="@+id/profileLandscapeImageView"
+        app:layout_constraintTop_toBottomOf="@+id/profileLandscapeTextView"
+        app:layout_constraintVertical_bias="0.555" />
+
+    <EditText
+        android:id="@+id/currentUsernameEditText"
+        android:layout_width="196dp"
+        android:layout_height="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/displayAgeTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.305"
+        app:layout_constraintStart_toEndOf="@+id/newUsernameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/newUsernameEditText" />
+
+    <TextView
+        android:id="@+id/newUsernameTextView"
+        android:layout_width="106dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:text="New Username"
+        app:layout_constraintBottom_toTopOf="@+id/ageTextView"
+        app:layout_constraintStart_toEndOf="@+id/profileLandscapeImageView"
+        app:layout_constraintTop_toBottomOf="@+id/profileLandscapeTextView"
+        app:layout_constraintVertical_bias="0.824" />
+
+    <EditText
+        android:id="@+id/newUsernameEditText"
+        android:layout_width="197dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintStart_toEndOf="@+id/currentUsernameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/profileLandscapeTextView" />
+
+    <TextView
+        android:id="@+id/ageTextView"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:text="Age"
+        app:layout_constraintBottom_toTopOf="@+id/bioTextView"
+        app:layout_constraintStart_toEndOf="@+id/profileLandscapeImageView"
+        app:layout_constraintTop_toBottomOf="@+id/profileLandscapeTextView"
+        app:layout_constraintVertical_bias="0.9" />
+
+    <TextView
+        android:id="@+id/displayAgeTextView"
+        android:layout_width="196dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/displayBioTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toEndOf="@+id/ageTextView" />
+
+    <TextView
+        android:id="@+id/bioTextView"
+        android:layout_width="39dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:text="Bio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/profileLandscapeImageView"
+        app:layout_constraintTop_toBottomOf="@+id/profileLandscapeTextView"
+        app:layout_constraintVertical_bias="0.446" />
+
+    <TextView
+        android:id="@+id/displayBioTextView"
+        android:layout_width="196dp"
+        android:layout_height="173dp"
+        android:layout_marginBottom="4dp"
+        android:text="LoremIpsum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toEndOf="@+id/bioTextView"
+        app:layout_constraintTop_toBottomOf="@+id/newUsernameEditText"
+        app:layout_constraintVertical_bias="0.806" />
 </androidx.constraintlayout.widget.ConstraintLayout>
