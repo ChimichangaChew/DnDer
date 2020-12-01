@@ -6,10 +6,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="248dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Input Search Username"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/DnDerLogoImageView"
-        android:layout_width="385dp"
-        android:layout_height="256dp"
+        android:layout_width="386dp"
+        android:layout_height="259dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,7 +55,7 @@
         app:layout_constraintVertical_bias="0.477" />
 
     <TextView
-        android:id="@+id/textviewPassword"
+        android:id="@+id/textViewPassword"
         android:layout_width="98dp"
         android:layout_height="36dp"
         android:layout_marginTop="44dp"
@@ -71,7 +93,7 @@
         app:layout_constraintVertical_bias="0.466" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/loginButton"
         android:layout_width="116dp"
         android:layout_height="87dp"
         android:onClick="onLoginClick"
@@ -82,4 +104,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.849" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
