@@ -8,71 +8,27 @@
 
     <ImageView
         android:id="@+id/profileImageView"
-        android:layout_width="261dp"
-        android:layout_height="252dp"
-        android:layout_marginTop="180dp"
+        android:layout_width="99dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="96dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="162dp"
-        android:layout_height="69dp"
-        android:text="Profile"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:id="@+id/profileUsernameTextView"
+        android:layout_width="223dp"
+        android:layout_height="37dp"
+        android:text="Username"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/profileImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/currentUsernameTextView"
-        android:layout_width="193dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="488dp"
-        android:text="Current Username"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toStartOf="@+id/newUsernameEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/currentUsernameEditText"
-        android:layout_width="430dp"
-        android:layout_height="51dp"
-        android:layout_marginEnd="192dp"
-        android:layout_marginRight="192dp"
-        android:layout_marginBottom="44dp"
-        app:layout_constraintBottom_toTopOf="@+id/displayAgeTextView"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/newUsernameTextView"
-        android:layout_width="191dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="40dp"
-        android:text="New Username"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/ageTextView"
-        app:layout_constraintEnd_toStartOf="@+id/currentUsernameEditText"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentUsernameTextView"
-        app:layout_constraintVertical_bias="0.031" />
-
-    <EditText
-        android:id="@+id/newUsernameEditText"
-        android:layout_width="430dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="192dp"
-        android:layout_marginRight="192dp"
-        app:layout_constraintBottom_toTopOf="@+id/currentUsernameEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profileImageView"
-        app:layout_constraintVertical_bias="0.581" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.491" />
 
     <TextView
         android:id="@+id/ageTextView"
@@ -82,21 +38,21 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/displayAgeTextView"
-        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42" />
+        app:layout_constraintVertical_bias="0.392" />
 
     <TextView
         android:id="@+id/displayAgeTextView"
-        android:layout_width="427dp"
-        android:layout_height="52dp"
-        android:layout_marginEnd="192dp"
-        android:layout_marginRight="192dp"
+        android:layout_width="191dp"
+        android:layout_height="37dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
         app:layout_constraintBottom_toTopOf="@+id/displayBioTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileImageView"
-        app:layout_constraintVertical_bias="0.808" />
+        app:layout_constraintVertical_bias="0.48" />
 
     <TextView
         android:id="@+id/bioTextView"
@@ -106,20 +62,21 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/displayBioTextView"
-        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ageTextView"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintVertical_bias="0.123" />
 
     <TextView
         android:id="@+id/displayBioTextView"
-        android:layout_width="423dp"
-        android:layout_height="711dp"
-        android:layout_marginEnd="196dp"
-        android:layout_marginRight="196dp"
-        android:layout_marginBottom="152dp"
+        android:layout_width="179dp"
+        android:layout_height="284dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:text="LoremIpsum"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.879" />
 </androidx.constraintlayout.widget.ConstraintLayout>
