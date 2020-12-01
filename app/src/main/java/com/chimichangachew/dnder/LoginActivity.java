@@ -22,6 +22,5 @@ public class LoginActivity extends AppCompatActivity {
          mUser = mEditTextUser.getText().toString();
          intent.putExtra(EXTRA_MESSAGE,mUser);
         startActivity(intent);
-        //setContentView(R.layout.match); This works but doesn't actually create a new activity, so i need to update this block to actually create a Match Activity rather than just update the content view.
-    }
+        }
 }
