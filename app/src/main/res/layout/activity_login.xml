@@ -8,16 +8,16 @@
 
     <ImageView
         android:id="@+id/DnDerLogoImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="385dp"
+        android:layout_height="256dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129"
-        tools:srcCompat="@tools:sample/avatars[0]"
+        app:layout_constraintVertical_bias="0.134"
+        tools:srcCompat="@drawable/DnDer_Logo"
         tools:visibility="visible" />
 
     <TextView
