@@ -10,10 +10,10 @@ import androidx.room.Update;
 @Dao
 public interface ProfileDao {
 
-    @Query("SELECT * FROM Profiles WHERE uid = :uid")
-    public Profile getProfiles(long uid);
+    @Query("SELECT * FROM Profiles WHERE uid LIKE :uid")
+    public Profile getProfile(long uid);
 
-    @Query("SELECT * FROM Profiles WHERE username = :username")
+    @Query("SELECT * FROM Profiles WHERE username LIKE :username")
     public Profile getProfiles(String username);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

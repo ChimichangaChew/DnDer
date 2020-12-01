@@ -1,10 +1,19 @@
 package com.chimichangachew.dnder;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 import androidx.fragment.app.Fragment;
 
 public class ProfileFragment extends Fragment {
-    public ProfileFragment(){
-        super(R.layout.activity_profile);
+
+    @Override
+    public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        View view = inflater.inflate(R.layout.activity_profile, container, false);
+
+        return view;
     }
 
 }

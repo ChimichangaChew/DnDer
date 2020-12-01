@@ -6,10 +6,14 @@ import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.RoomDatabase;
+
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     private String mUser;
     public static final String EXTRA_MESSAGE = "com.chimichangachew.dnder.MESSAGE";
+    private DnDerDatabase mDefaultDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
