@@ -14,16 +14,17 @@
         android:orientation="vertical">
 
         <Button
+            android:layout_marginTop="535dp"
             android:id="@+id/notifications_button"
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:text="Notifications"/>
+            android:text="@string/notifications" />
 
         <Button
             android:id="@+id/profile_button"
             android:layout_width="90dp"
-            android:layout_height="111dp"
-            android:text="Profile" />
+            android:layout_height="90dp"
+            android:text="@string/profile" />
     </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView

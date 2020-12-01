@@ -20,5 +20,25 @@
     <string name="login">Login</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="input_search_username">Input Search Username</string>
+    <string name="search">Search</string>
+    <string name="input_search_username2">Input Search Username</string>
+    <string name="search2">Search</string>
+    <string name="username2">Username</string>
+    <string name="age">Age</string>
+    <string name="bio">Bio</string>
+    <string name="loremipsum">LoremIpsum</string>
+    <string name="profile">Profile</string>
+    <string name="age2">Age</string>
+    <string name="bio2">Bio</string>
+    <string name="loremipsum2">LoremIpsum</string>
+    <string name="profile2">Profile</string>
+    <string name="notifications">Notifications</string>
+    <string name="notifications2">Notifications</string>
+    <string name="profile3">Profile</string>
+    <string name="current_username">Current Username</string>
+    <string name="new_username">New Username</string>
+    <string name="new_username2">New Username</string>
+    <string name="current_username2">Current Username</string>
 </resources>
 
