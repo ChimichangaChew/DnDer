@@ -26,6 +26,34 @@ public class ProfileActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        prepareDatabase();
+        Intent intent = getIntent();
+        setContentView(R.layout.activity_profile);
+        mUser = findViewById(R.id.profileUsernameTextView);
+        mAge = findViewById(R.id.displayAgeTextView);
+        mBio = findViewById(R.id.displayBioTextView);
+        String Target = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
+        searchUser(Target);
+
+    }
+
+    protected void searchUser(String Target){
+        try {
+            mProfile = mDefaultDb.ProfileDao().getProfileName(Target);
+            Log.d(TAG, "onCreate: Found Profile!"+ mProfile.getUsername() + " "+ mProfile.getAge() + " "+ mProfile.getBio() + " ");
+            mUser.setText(mProfile.getUsername());
+            Log.d(TAG, "onCreate: Set User!");
+            mAge.setText(String.valueOf(mProfile.getAge()));
+            Log.d(TAG, "onCreate: Set Age!");
+            mBio.setText(mProfile.getBio());
+            Log.d(TAG, "onCreate: set Bio!");
+        }
+        catch (Exception e) {
+            Toast.makeText(this,Target + " could not be found.",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    protected void prepareDatabase(){
         mDefaultDb = DnDerDatabase.getInstance(getApplicationContext());
         try {
             Profile Temp = mDefaultDb.ProfileDao().getProfileName(getString(R.string.user1));
@@ -53,26 +81,6 @@ public class ProfileActivity extends AppCompatActivity {
             mDefaultDb.ProfileDao().insertProfiles(profileList);
             mDefaultDb.ProfileDao().insertProfile(Temp1);
         }
-        Intent intent = getIntent();
-        setContentView(R.layout.activity_profile);
-        mUser = findViewById(R.id.profileUsernameTextView);
-        mAge = findViewById(R.id.displayAgeTextView);
-        mBio = findViewById(R.id.displayBioTextView);
-        String Target = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
-        try {
-            mProfile = mDefaultDb.ProfileDao().getProfileName(Target);
-            Log.d(TAG, "onCreate: Found Profile!"+ mProfile.getUsername() + " "+ mProfile.getAge() + " "+ mProfile.getBio() + " ");
-            mUser.setText(mProfile.getUsername());
-            Log.d(TAG, "onCreate: Set User!");
-            mAge.setText(String.valueOf(mProfile.getAge()));
-            Log.d(TAG, "onCreate: Set Age!");
-            mBio.setText(mProfile.getBio());
-            Log.d(TAG, "onCreate: set Bio!");
-            }
-        catch (Exception e) {
-            Toast.makeText(this,Target + " could not be found.",Toast.LENGTH_SHORT).show();
-        }
-
     }
 
 }
