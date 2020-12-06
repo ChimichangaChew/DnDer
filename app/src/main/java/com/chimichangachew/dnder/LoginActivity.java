@@ -21,10 +21,18 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void onLoginClick(View view){
-        Intent intent = new Intent(this,MatchActivity.class);
+        Intent intent = new Intent(this,ProfileActivity.class);
          EditText mEditTextUser = (EditText)findViewById(R.id.editTextUser);
          mUser = mEditTextUser.getText().toString();
          intent.putExtra(EXTRA_MESSAGE,mUser);
         startActivity(intent);
         }
+
+    public void onSearchClick(View view){
+
+        Intent intent = new Intent(this,ProfileActivity.class);
+        EditText mEditTextSearch = (EditText)findViewById(R.id.searchEditText);
+        intent.putExtra(EXTRA_MESSAGE,mEditTextSearch.getText().toString());
+        startActivity(intent);
+    }
 }
