@@ -12,18 +12,19 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     private String mUser;
+    private EditText mUserName;
     public static final String EXTRA_MESSAGE = "com.chimichangachew.dnder.MESSAGE";
-    private DnDerDatabase mDefaultDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        mUserName = findViewById(R.id.userEditText);
     }
 
     public void onLoginClick(View view){
         Intent intent = new Intent(this,ProfileActivity.class);
-         EditText mEditTextUser = (EditText)findViewById(R.id.editTextUser);
-         mUser = mEditTextUser.getText().toString();
+
+         mUser = mUserName.getText().toString();
          intent.putExtra(EXTRA_MESSAGE,mUser);
         startActivity(intent);
         }
@@ -31,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
     public void onSearchClick(View view){
 
         Intent intent = new Intent(this,ProfileActivity.class);
-        EditText mEditTextSearch = (EditText)findViewById(R.id.searchEditText);
+        EditText mEditTextSearch = (EditText)findViewById(R.id.userEditText);
         intent.putExtra(EXTRA_MESSAGE,mEditTextSearch.getText().toString());
         startActivity(intent);
     }
