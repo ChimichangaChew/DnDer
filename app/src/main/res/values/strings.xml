@@ -51,5 +51,7 @@
     <string name="user7">ChinCheddarPeppers</string>
     <string name="age7">28</string>
     <string name="bio7">Lorem Ipsum</string>
+    <string name="settings">Settings</string>
+    <string name="help">Help</string>
 </resources>
 
