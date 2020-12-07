@@ -50,5 +50,9 @@
     <string name="theme_header">Theme</string>
     <string name="pref_title_theme">Dark mode</string>
     <string name="pref_description_theme">This option turns dark mode on or off</string>
+    <string name="notif_body">This option turns notifications for this app on or off</string>
+    <string name="notif_test">Tap to test notifications</string>
+    <string name="channel_name">DnDer</string>
+    <string name="channel_description">Obnoxious Alerting for Points</string>
 </resources>
 

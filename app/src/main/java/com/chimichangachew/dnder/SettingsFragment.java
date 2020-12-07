@@ -10,8 +10,8 @@ public class SettingsFragment extends PreferenceFragment
         implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     public static String PREFERENCE_THEME = "pref_theme";
-    public static String PREFERENCE_SUBJECT_ORDER = "pref_subject_order";
-    public static String PREFERENCE_DEFAULT_QUESTION = "pref_default_question";
+    public static String PREFERENCE_NOTIFICATIONS = "notif";
+    public static String PREFERENCE_NOTIFICATIONS_TEST = "notif_test";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,12 @@ public class SettingsFragment extends PreferenceFragment
         if (key.equals(PREFERENCE_THEME)) {
             // Recreate the activity so the theme takes effect
             getActivity().recreate();
+        }
+        if(key.equals(PREFERENCE_NOTIFICATIONS)){
+
+        }
+        if (key.equals(PREFERENCE_NOTIFICATIONS_TEST)){
+
         }
     }
 }

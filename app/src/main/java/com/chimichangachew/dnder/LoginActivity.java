@@ -83,4 +83,10 @@ public class LoginActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE,mEditTextSearch.getText().toString());
         startActivity(intent);
     }
+
+    public void onStop(){
+        super.onStop();
+
+
+    }
 }
