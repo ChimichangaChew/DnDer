@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -28,5 +29,10 @@ private int mSettingsMenu;
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
             savedInstanceState.putInt(KEY_SETTINGS_ID, mSettingsMenu);
+    }
+    public void generateNotification() {
+        Intent intent = new Intent(this,NotificationIntentService.class);
+        intent.putExtra(NotificationIntentService.NOTIFY_LEFT,"Test");
+        startService(intent);
     }
 }

@@ -84,9 +84,11 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
     public void onStop(){
         super.onStop();
-
-
+        Intent intent = new Intent(this, NotificationIntentService.class);
+        intent.putExtra(NotificationIntentService.NOTIFY_LEFT,"Left");
+        startService(intent);
     }
 }

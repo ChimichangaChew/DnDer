@@ -1,10 +1,13 @@
 package com.chimichangachew.dnder;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.preference.Preference;
+
+import androidx.preference.PreferenceFragmentCompat;
 
 public class SettingsFragment extends PreferenceFragment
         implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -25,7 +28,6 @@ public class SettingsFragment extends PreferenceFragment
                 PreferenceManager.getDefaultSharedPreferences(getActivity());
     }
 
-
     @Override
     public void onResume() {
         super.onResume();
@@ -43,12 +45,6 @@ public class SettingsFragment extends PreferenceFragment
         if (key.equals(PREFERENCE_THEME)) {
             // Recreate the activity so the theme takes effect
             getActivity().recreate();
-        }
-        if(key.equals(PREFERENCE_NOTIFICATIONS)){
-
-        }
-        if (key.equals(PREFERENCE_NOTIFICATIONS_TEST)){
-
         }
     }
 }
