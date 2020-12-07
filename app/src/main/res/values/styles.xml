@@ -18,7 +18,7 @@
         <item name="android:textColorPrimary">#BD992A</item>
         <item name="colorAccent">#B3700E</item>
         <item name="android:colorBackground">#171717</item>
-        <item name="android:textColor">#D6D6D6</item>
+        <item name="android:textColor">#EAEAEA</item>
         <item name="android:textColorSecondary">#858484</item>
         <item name="android:editTextColor">@color/colorText</item>
         <item name="colorButtonNormal">#BD992A</item>
