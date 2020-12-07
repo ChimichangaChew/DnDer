@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.preference.Preference;
 
+import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 public class SettingsFragment extends PreferenceFragment
@@ -45,6 +45,8 @@ public class SettingsFragment extends PreferenceFragment
         if (key.equals(PREFERENCE_THEME)) {
             // Recreate the activity so the theme takes effect
             getActivity().recreate();
+        }if (key.equals(PREFERENCE_NOTIFICATIONS)){
+            LoginActivity.resetCount();
         }
     }
 }

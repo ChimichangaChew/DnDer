@@ -20,8 +20,10 @@ public class LoginActivity extends AppCompatActivity {
     private String mUser;
     private EditText mUserName;
     public static final String EXTRA_MESSAGE = "com.chimichangachew.dnder.MESSAGE";
+    public static final String KEY_NOTIF_COUNT = "Count";
     private SharedPreferences mSharedPrefs;
     private boolean mDarkTheme;
+    private static int mCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +35,14 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         mUserName = findViewById(R.id.userEditText);
+        if (savedInstanceState != null && savedInstanceState.getInt(KEY_NOTIF_COUNT) != 0) {
+            mCount = savedInstanceState.getInt(KEY_NOTIF_COUNT);
+        }
     }
 
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.login_menu,menu);
+        inflater.inflate(R.menu.login_menu, menu);
         return true;
     }
 
@@ -68,27 +73,48 @@ public class LoginActivity extends AppCompatActivity {
             recreate();
         }
     }
-    public void onLoginClick(View view){
-        Intent intent = new Intent(this,ProfileActivity.class);
 
-         mUser = mUserName.getText().toString();
-         intent.putExtra(EXTRA_MESSAGE,mUser);
+    public void onLoginClick(View view) {
+        Intent intent = new Intent(this, ProfileActivity.class);
+
+        mUser = mUserName.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, mUser);
         startActivity(intent);
-        }
+    }
 
-    public void onSearchClick(View view){
+    public void onSearchClick(View view) {
 
-        Intent intent = new Intent(this,ProfileActivity.class);
-        EditText mEditTextSearch = (EditText)findViewById(R.id.userEditText);
-        intent.putExtra(EXTRA_MESSAGE,mEditTextSearch.getText().toString());
+        Intent intent = new Intent(this, ProfileActivity.class);
+        EditText mEditTextSearch = (EditText) findViewById(R.id.userEditText);
+        intent.putExtra(EXTRA_MESSAGE, mEditTextSearch.getText().toString());
         startActivity(intent);
     }
 
     @Override
-    public void onStop(){
+    public void onStop() {
         super.onStop();
-        Intent intent = new Intent(this, NotificationIntentService.class);
-        intent.putExtra(NotificationIntentService.NOTIFY_LEFT,"Left");
-        startService(intent);
+        if (checkCount()) {
+            Intent intent = new Intent(this, NotificationIntentService.class);
+            intent.putExtra(NotificationIntentService.NOTIFY_LEFT, "Left");
+            startService(intent);
+        }
+    }
+
+    public void onSaveInstanceState(Bundle savedInsatnceState) {
+        super.onSaveInstanceState(savedInsatnceState);
+        savedInsatnceState.putInt(KEY_NOTIF_COUNT, mCount);
+    }
+
+    public static void resetCount() {
+        mCount = 0;
+    }
+
+    public static boolean checkCount(){
+        if (mCount == 0) {
+            mCount++;
+            return true;
+        }
+        else
+            return false;
     }
 }

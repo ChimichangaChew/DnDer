@@ -81,6 +81,16 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
+    protected void onStop(){
+        super.onStop();
+        if(LoginActivity.checkCount()){
+            Intent intent = new Intent(this, NotificationIntentService.class);
+            intent.putExtra(NotificationIntentService.NOTIFY_LEFT, "Left");
+            startService(intent);
+        }
+    }
+
+
     protected void searchUser(String Target){
         try {
             mProfile = mDefaultDb.ProfileDao().getProfileName(Target);
