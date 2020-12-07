@@ -3,6 +3,9 @@ package com.chimichangachew.dnder;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,7 +37,29 @@ public class ProfileActivity extends AppCompatActivity {
         mBio = findViewById(R.id.displayBioTextView);
         String Target = intent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
         searchUser(Target);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.profile_menu,menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.settings:
+                Intent intent = new Intent(this,
+                        SettingsActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.help:
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     protected void searchUser(String Target){
@@ -72,12 +97,12 @@ public class ProfileActivity extends AppCompatActivity {
             Profile Temp7 = new Profile();
             List<Profile> profileList = Arrays.asList(Temp1,Temp2,Temp3,Temp4,Temp5,Temp6,Temp7);
             Temp1.setBio(getString(R.string.bio1));Temp1.setAge(Integer.parseInt(getString(R.string.age1)));Temp1.setUsername(getString(R.string.user1));
-            Temp2.setBio(getString(R.string.bio2));Temp2.setAge(Integer.parseInt(getString(R.string.age2)));Temp2.setUsername(getString(R.string.user2));
-            Temp3.setBio(getString(R.string.bio3));Temp3.setAge(Integer.parseInt(getString(R.string.age3)));Temp3.setUsername(getString(R.string.user3));
-            Temp4.setBio(getString(R.string.bio4));Temp4.setAge(Integer.parseInt(getString(R.string.age4)));Temp4.setUsername(getString(R.string.user4));
-            Temp5.setBio(getString(R.string.bio5));Temp5.setAge(Integer.parseInt(getString(R.string.age5)));Temp5.setUsername(getString(R.string.user5));
-            Temp6.setBio(getString(R.string.bio6));Temp6.setAge(Integer.parseInt(getString(R.string.age6)));Temp6.setUsername(getString(R.string.user6));
-            Temp7.setBio(getString(R.string.bio7));Temp7.setAge(Integer.parseInt(getString(R.string.age7)));Temp7.setUsername(getString(R.string.user7));
+            Temp2.setBio(getString(R.string.bio1));Temp2.setAge(Integer.parseInt(getString(R.string.age2)));Temp2.setUsername(getString(R.string.user2));
+            Temp3.setBio(getString(R.string.bio1));Temp3.setAge(Integer.parseInt(getString(R.string.age3)));Temp3.setUsername(getString(R.string.user3));
+            Temp4.setBio(getString(R.string.bio1));Temp4.setAge(Integer.parseInt(getString(R.string.age4)));Temp4.setUsername(getString(R.string.user4));
+            Temp5.setBio(getString(R.string.bio1));Temp5.setAge(Integer.parseInt(getString(R.string.age5)));Temp5.setUsername(getString(R.string.user5));
+            Temp6.setBio(getString(R.string.bio1));Temp6.setAge(Integer.parseInt(getString(R.string.age6)));Temp6.setUsername(getString(R.string.user6));
+            Temp7.setBio(getString(R.string.bio1));Temp7.setAge(Integer.parseInt(getString(R.string.age7)));Temp7.setUsername(getString(R.string.user7));
             mDefaultDb.ProfileDao().insertProfiles(profileList);
             mDefaultDb.ProfileDao().insertProfile(Temp1);
         }
