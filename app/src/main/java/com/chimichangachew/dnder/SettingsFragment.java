@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.preference.Preference;
 
+import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 public class SettingsFragment extends PreferenceFragment
@@ -45,40 +45,8 @@ public class SettingsFragment extends PreferenceFragment
         if (key.equals(PREFERENCE_THEME)) {
             // Recreate the activity so the theme takes effect
             getActivity().recreate();
+        }if (key.equals(PREFERENCE_NOTIFICATIONS)){
+            LoginActivity.resetCount();
         }
     }
 }
-/*
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
-import android.preference.PreferenceManager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-public class SettingsFragment extends PreferenceFragmentCompat {
-
-    public static String PREFERENCE_THEME = "pref_theme";
-    private ListPreference mListPreference;
-
-    @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        // Load the preferences from an XML resource
-        setPreferencesFromResource(R.xml.preferences, rootKey);
-    }
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mListPreference = (ListPreference)  getPreferenceManager().findPreference("preference_key");
-        mListPreference.setOnPreferenceChangeListener((preferences, key) -> {
-            if (key.equals(PREFERENCE_THEME)) {
-                // Recreate the activity so the theme takes effect
-                getActivity().recreate();
-                }
-             return true;
-            });
-        return inflater.inflate(R.layout.fragment_settings,container,false);
-    }
-}*/
