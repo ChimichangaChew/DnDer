@@ -37,24 +37,30 @@
 
     <TextView
         android:id="@+id/textViewUser"
-        android:layout_width="98dp"
-        android:layout_height="31dp"
+        android:layout_width="130dp"
+        android:layout_height="36dp"
+        android:scaleX="1.25"
+        android:scaleY="1.25"
         android:text="@string/username"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/userEditText"
-        app:layout_constraintHorizontal_bias="0.618"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.461" />
+        app:layout_constraintVertical_bias="0.473" />
 
     <TextView
         android:id="@+id/textViewPassword"
-        android:layout_width="98dp"
+        android:layout_width="130dp"
         android:layout_height="36dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="36dp"
+        android:scaleX="1.25"
+        android:scaleY="1.25"
         android:text="@string/password"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toStartOf="@+id/editTextTextPassword"
-        app:layout_constraintHorizontal_bias="0.587"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewUser" />
 
@@ -75,10 +81,10 @@
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
@@ -88,7 +94,7 @@
     <EditText
         android:id="@+id/userEditText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="49dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
         android:ems="10"
