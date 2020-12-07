@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.DayNight">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#FF980303</item>
-        <item name="colorPrimaryDark">#680303</item>
+        <item name="colorPrimary">#9A0707</item>
+        <item name="colorPrimaryDark">#680404</item>
         <item name="colorAccent">#FFE1BD0A</item>
         <item name="android:textColorPrimary">#FFE1BD0A</item>
         <item name="android:textColor">#3A362F</item>
@@ -13,14 +13,14 @@
     </style>
 
     <style name="DarkTheme" parent="Theme.AppCompat.DayNight">
-        <item name="colorPrimary">#500000</item>
+        <item name="colorPrimary">#4C0000</item>
         <item name="colorPrimaryDark">#2C0000</item>
         <item name="android:textColorPrimary">#BD992A</item>
-        <item name="colorAccent">@color/colorPrimaryDark</item>
-        <item name="android:colorBackground">@color/colorBackgroundDark</item>
+        <item name="colorAccent">#B3700E</item>
+        <item name="android:colorBackground">#171717</item>
         <item name="android:textColor">#D6D6D6</item>
-        <item name="android:textColorSecondary">#636363</item>
+        <item name="android:textColorSecondary">#858484</item>
         <item name="android:editTextColor">@color/colorText</item>
-        <item name="colorButtonNormal">@color/colorButton</item>
+        <item name="colorButtonNormal">#BD992A</item>
     </style>
 </resources>
