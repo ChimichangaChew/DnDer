@@ -1,7 +1,9 @@
 package com.chimichangachew.dnder;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,8 +28,15 @@ public class ProfileActivity extends AppCompatActivity {
     private EditText mTarget;
     private Profile mProfile;
     private DnDerDatabase mDefaultDb;
+    private SharedPreferences mSharedPrefs;
+    private boolean mDarkTheme;
 
     protected void onCreate(Bundle savedInstanceState) {
+        mSharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        mDarkTheme = mSharedPrefs.getBoolean(SettingsFragment.PREFERENCE_THEME, false);
+        if (mDarkTheme) {
+            setTheme(R.style.DarkTheme);
+        }
         super.onCreate(savedInstanceState);
         prepareDatabase();
         Intent intent = getIntent();
@@ -59,6 +68,16 @@ public class ProfileActivity extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    protected void onResume() {
+        super.onResume();
+
+        // If theme changed, recreate the activity so theme is applied
+        boolean darkTheme = mSharedPrefs.getBoolean(SettingsFragment.PREFERENCE_THEME, false);
+        if (darkTheme != mDarkTheme) {
+            recreate();
         }
     }
 
