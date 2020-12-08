@@ -1,13 +1,12 @@
 package com.chimichangachew.dnder;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
-import android.content.Intent;
+import android.app.Fragment;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.View;
 
 public class SettingsActivity extends AppCompatActivity {
 private String KEY_SETTINGS_ID = "SettingsMenu";
@@ -30,9 +29,18 @@ private int mSettingsMenu;
         super.onSaveInstanceState(savedInstanceState);
             savedInstanceState.putInt(KEY_SETTINGS_ID, mSettingsMenu);
     }
-    public void generateNotification() {
-        Intent intent = new Intent(this,NotificationIntentService.class);
-        intent.putExtra(NotificationIntentService.NOTIFY_LEFT,"Test");
-        startService(intent);
+    public void onProfileClick(View view){
+        Fragment mFragment = getFragmentManager().findFragmentById(R.id.settings_fragment_container);
+        getFragmentManager().beginTransaction().remove(mFragment).commit();
+        Fragment fragment = ProfileFragment.newInstance();
+        getFragmentManager().beginTransaction()
+                .replace(R.id.settings_fragment_container, fragment).commit();
     }
+    public void onSettingsClick(View view){
+        Fragment mFragment = getFragmentManager().findFragmentById(R.id.settings_fragment_container);
+        getFragmentManager().beginTransaction().remove(mFragment).commit();
+        getFragmentManager().beginTransaction()
+                .replace(R.id.settings_fragment_container, new SettingsFragment()).commit();
+    }
+
 }

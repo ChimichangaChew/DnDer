@@ -5,12 +5,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.RoomDatabase;
 
@@ -56,7 +58,15 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.help:
-
+                int theme;
+                if(mDarkTheme)
+                    theme = R.style.DarkTheme;
+                else
+                    theme = R.style.AppTheme;
+                AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this,theme));
+                builder.setTitle(R.string.helptitle);
+                builder.setMessage(R.string.helpbody);
+                builder.show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -100,9 +110,9 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public void onSaveInstanceState(Bundle savedInsatnceState) {
-        super.onSaveInstanceState(savedInsatnceState);
-        savedInsatnceState.putInt(KEY_NOTIF_COUNT, mCount);
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt(KEY_NOTIF_COUNT, mCount);
     }
 
     public static void resetCount() {

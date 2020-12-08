@@ -22,5 +22,8 @@
         <item name="android:textColorSecondary">#858484</item>
         <item name="android:editTextColor">@color/colorText</item>
         <item name="colorButtonNormal">#BD992A</item>
+        <item name="colorBackgroundFloating">#171717</item>
+        <item name="android:textColorHint">#858484</item>
+
     </style>
 </resources>

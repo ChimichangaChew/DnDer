@@ -2,9 +2,11 @@ package com.chimichangachew.dnder;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
@@ -64,7 +67,15 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.help:
-
+                int theme;
+                if(mDarkTheme)
+                    theme = R.style.DarkTheme;
+                else
+                    theme = R.style.AppTheme;
+                AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(this,theme));
+                builder.setTitle(R.string.helptitle);
+                builder.setMessage(R.string.helpbody);
+                builder.show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -133,7 +144,6 @@ public class ProfileActivity extends AppCompatActivity {
             Temp6.setBio(getString(R.string.bio1));Temp6.setAge(Integer.parseInt(getString(R.string.age6)));Temp6.setUsername(getString(R.string.user6));
             Temp7.setBio(getString(R.string.bio1));Temp7.setAge(Integer.parseInt(getString(R.string.age7)));Temp7.setUsername(getString(R.string.user7));
             mDefaultDb.ProfileDao().insertProfiles(profileList);
-            mDefaultDb.ProfileDao().insertProfile(Temp1);
         }
     }
 

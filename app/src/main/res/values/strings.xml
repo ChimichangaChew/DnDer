@@ -24,7 +24,7 @@
     <string name="search">Search</string>
     <string name="input_search_username2">Input Search Username</string>
     <string name="age">Age</string>
-    <string name="bio">Bio</string>
+    <string name="bio">Biography</string>
     <string name="loremipsum">LoremIpsum</string>
     <string name="profile">Profile</string>
     <string name="notifications">Notifications</string>
@@ -54,5 +54,8 @@
     <string name="notif_test">Tap to test notifications</string>
     <string name="channel_name">DnDer</string>
     <string name="channel_description">Obnoxious Alerting for Points</string>
+    <string name="create_profile">Create Profile</string>
+    <string name="helpbody">DnDer will be a DnD party finding utility in it\'s finished state.\n\nCurrent features include dark mode and notification options that are adjustable in settings. Users can search for and create profiles to store in a local database.\n\nProfiles can be created in settings.</string>
+    <string name="helptitle">Help</string>
 </resources>
 
