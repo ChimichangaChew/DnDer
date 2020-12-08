@@ -9,7 +9,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 
 public class SettingsActivity extends AppCompatActivity {
-private String KEY_SETTINGS_ID = "SettingsMenu";
+private final String KEY_SETTINGS_ID = "SettingsMenu";
 private int mSettingsMenu;
     @Override
     protected void onCreate(Bundle savedInstanceState){

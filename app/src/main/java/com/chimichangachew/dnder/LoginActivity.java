@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
     public void onSearchClick(View view) {
 
         Intent intent = new Intent(this, ProfileActivity.class);
-        EditText mEditTextSearch = (EditText) findViewById(R.id.userEditText);
+        EditText mEditTextSearch = findViewById(R.id.userEditText);
         intent.putExtra(EXTRA_MESSAGE, mEditTextSearch.getText().toString());
         startActivity(intent);
     }
