@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 
 public class SettingsActivity extends AppCompatActivity {
-private String KEY_SETTINGS_ID = "SettingsMenu";
+private final String KEY_SETTINGS_ID = "SettingsMenu";
 private int mSettingsMenu;
     @Override
     protected void onCreate(Bundle savedInstanceState){
