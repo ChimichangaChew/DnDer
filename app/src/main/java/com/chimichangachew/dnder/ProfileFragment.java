@@ -49,6 +49,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             mProfile.setAge(age);
             mProfile.setBio(bio);
             mDefaultDatabase.ProfileDao().insertProfile(mProfile);
+            Toast.makeText(view.getContext(),"Profile Added!",Toast.LENGTH_SHORT).show();
         }
         else{
             Toast.makeText(view.getContext(),"All Fields are Required!",Toast.LENGTH_SHORT).show();
